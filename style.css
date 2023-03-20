@@ -32,17 +32,25 @@ ol[role='list'],
 ul[role='list'] {
     list-style: none;
 }
+
 .primary-header {
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
+    border-bottom: 0.1rem solid var(--clr-accent);
 }
 
 .primary-header .container {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-inline: var(--margin-primary);
+}
+
+.primary-header-logo-container {
+    /* outline: 1px solid greenyellow; */
+    width: fit-content;
+    margin-block: 0.5rem;
 }
 
 .primary-navigation ul {
@@ -60,16 +68,82 @@ ul[role='list'] {
     font-weight: var(--fw-semi-bold);
 }
 
-.add-book-section .container {
-    outline: 1px solid hotpink;
-    display: grid;
-    grid-template-areas: "fieldset preview";
-    grid-template-columns: 2fr 1fr;
-    margin: var(--margin-primary);
+.section-title {
+    font-weight: var(--fw-bold);
+    font-size: 1rem;
+    font-family: var(--ff-primary);
+    width: fit-content;
 }
 
-.book-details-fieldset {
+.add-book-section .container {
+    /* outline: 1px solid hotpink; */
+    margin: var(--margin-primary);
+    background-color:hsl(0, 0%, 86%);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--clr-accent);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-regular);
+}
+
+.add-book-section-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    /* outline: 1px solid blue; */
+}
+
+.add-book-form-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 17% auto;
+    /* outline: 1px solid blue; */
+    gap: 1rem;
+    max-height: 500px;
+}
+
+.add-book-form-container label {
+    grid-column: 1/2;
+}
+
+.add-book-form-container button {
+    grid-column: 2/3;    
+    border-radius: 1rem;
+    width: 5rem;
+    height: 2rem;
+    border: 0;
+    cursor: pointer;
+
+    background-color: var(--clr-accent);
+    color: white;
+}
+
+.add-book-form-container input {
+    grid-column: 2/3;
+    width: 20rem;
+
+    border: 0;
+    border-radius: 0.5rem;
+    height: 2rem;
+    padding: 0.5rem;
+}
+
+.preview-container-title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    /* outline: 1px solid blue; */
+}
+
+.preview-container {
+    /* outline: 1px solid blue; */
+
+    grid-column: 2/3;
+    grid-row: 2/3;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
 }

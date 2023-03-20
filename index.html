@@ -13,7 +13,9 @@
 <body>
     <header class="primary-header">
         <div class="container">
-            <a href="#"><img class="primary-header-logo" src="assets/QU press Logo.jpg" alt="QU Press logo"></a>
+            <div class="primary-header-logo-container">
+                <a href="#"><img class="primary-header-logo" src="assets/QU press Logo.jpg" alt="QU Press logo"></a>
+            </div>
             <nav class="primary-navigation">
                 <ul role="list">
                     <li><a href="index.html">Home</a></li>
@@ -26,16 +28,24 @@
     <main>
         <section class="add-book-section">
             <div class="container">
-                <fieldset class="book-details-fieldset">
+                <h1 class="section-title add-book-section-title">Add a book to the BMS</h1>
+
+                <form action="#" class="add-book-form-container">
+                    <label for="book-img">Upload book image</label><input type="file" id="book-img" name="book-img" accept="image/png, image/jpeg">
                     <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="keywords">Keywords</label><input type="text" name="keywords" id="keywords">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                </fieldset>
+                    <label for="book-keywords">Keywords</label><input type="text" name="book-keywords" id="book-keywords">
+                    <label for="book-briefing">Book briefing</label><input type="text" name="book-briefing" id="book-briefing">
+                    <label for="book-author">Book author</label><input type="text" name="book-author" id="book-author">
+                    <label for="book-pisbn">Book PISBN</label><input type="text" name="book-pisbn" id="book-pisbn">
+                    <label for="book-eisbn">Book EISBN</label><input type="text" name="book-eisbn" id="book-eisbn">
+                    <label for="book-catagory">Book catagory</label><input type="text" name="book-catagory" id="book-catagory">
+                    <button type="submit">Add</button>
+                </form>
+
+                <h2 class="section-title preview-container-title">Book preview</h2>
+                <div class="preview-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis dicta modi magni eveniet beatae sequi odio animi totam numquam, sunt vel aperiam repellendus corrupti laboriosam blanditiis quia in iure maiores! Autem delectus dolor magnam soluta, nesciunt praesentium repellat fugit sed placeat voluptate repellendus dolorem excepturi consequatur modi nemo nisi optio facilis suscipit mollitia quia repudiandae iste? Tenetur minus obcaecati odio. Saepe explicabo recusandae eum repellendus voluptas debitis rem accusantium dolore eos perferendis obcaecati, ipsa blanditiis nostrum dolorem repellat voluptatum sequi provident et quo? A dolorem officia voluptatum eveniet recusandae officiis. Quis sapiente, in nisi alias voluptatum perspiciatis numquam laudantium.</p>
+                </div>
             </div>
         </section>
     </main>
