@@ -39,7 +39,7 @@ ul[role='list'] {
 }
 
 .primary-header .container {
-    /* outline: 1px solid red; */
+    /* outline: 1px solid red;  */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,4 +146,20 @@ ul[role='list'] {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+footer .container {
+    border-top: 0.1rem solid var(--clr-accent);
+    padding-inline: var(--margin-primary);
+    padding-block: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-navigation ul a{
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    font-family: var(--ff-secondary);
 }
