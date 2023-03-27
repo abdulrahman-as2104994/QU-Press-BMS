@@ -304,7 +304,6 @@ footer .container {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
     font-family: var(--ff-secondary);
 
 }
@@ -319,10 +318,23 @@ footer .container {
 .footer-navigation ul a {
     text-decoration: none;
     color: white;
-    font-family: var(--ff-secondary);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-semi-bold);
 
 }
 
 .footer-navigation ul a:hover {
     text-decoration: underline;
+}
+
+
+footer .copyright-container {
+    /* outline: 2px solid white; */
+    color: white;
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid white;
+    width: 100%;
+    text-align: center;
 }
