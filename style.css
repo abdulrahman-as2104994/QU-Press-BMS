@@ -36,6 +36,7 @@ ul[role='list'] {
 .primary-header {
     /* outline: 1px solid blue; */
     border-bottom: 0.1rem solid var(--clr-accent);
+    height: 10vh;
 }
 
 .primary-header .container {
@@ -70,6 +71,10 @@ ul[role='list'] {
 
 .primary-navigation ul a:hover {
     text-decoration: underline;
+}
+
+main {
+    height: 80vh;
 }
 
 .section-title {
