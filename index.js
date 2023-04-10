@@ -65,6 +65,7 @@ const newBooks = [];
 
 add_book_form.addEventListener('submit', (e) => {
     newBooks.push({bookname: `${book_name_input.value}`, bookauthor: `${book_author_input.value}`, bookbriefing: `${book_briefing_input.value}`, bookcatagory: `${book_catagory_input.value}`, bookkeywords: `${book_keywords_input.value}`, bookpisbn: `${book_pisbn_input.value}`, bookeisbn: `${book_eisbn_input.value}`, bookimg: `${book_img_input.files[0].name}`});
+    add_book_form.reset();
     alert('Book added successfully');
 });
 
