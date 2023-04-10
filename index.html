@@ -33,21 +33,21 @@
 
                 <form action="#" class="add-book-form-container" id="add-book-form">
                     
-                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
+                    <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name" required>
 
-                    <label for="book-author">Book author</label><input type="text" name="book-author" id="book-author">
+                    <label for="book-author">Book author</label><input type="text" name="book-author" id="book-author" required>
 
-                    <label for="book-briefing-input">Book briefing</label><input type="text" name="book-briefing-input" id="book-briefing-input">
+                    <label for="book-briefing-input">Book briefing</label><input type="text" name="book-briefing-input" id="book-briefing-input" required>
 
-                    <label for="book-catagory">Book catagory</label><input type="text" name="book-catagory" id="book-catagory">
+                    <label for="book-catagory">Book catagory</label><input type="text" name="book-catagory" id="book-catagory" required>
 
-                    <label for="book-keywords">Book keywords</label><input type="text" name="book-keywords" id="book-keywords">
+                    <label for="book-keywords">Book keywords</label><input type="text" name="book-keywords" id="book-keywords" required>
                     
-                    <label for="book-pisbn">Book PISBN</label><input type="text" name="book-pisbn" id="book-pisbn" maxlength="13">
+                    <label for="book-pisbn">Book PISBN</label><input type="text" name="book-pisbn" id="book-pisbn" maxlength="13" required>
 
-                    <label for="book-eisbn">Book EISBN</label><input type="text" name="book-eisbn" id="book-eisbn" maxlength="13">
+                    <label for="book-eisbn">Book EISBN</label><input type="text" name="book-eisbn" id="book-eisbn" maxlength="13" required>
                     
-                    <label for="book-img">Upload book image</label><input type="file" id="book-img" name="book-img" accept="image/png, image/jpeg">
+                    <label for="book-img">Book cover</label><input type="file" id="book-img" name="book-img" accept="image/png, image/jpeg" required>
 
                     <button type="submit">Add</button>
                 </form>
@@ -122,6 +122,8 @@
             </div>
         </div>
     </footer>
+    <!-- Include the PapaParse library -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

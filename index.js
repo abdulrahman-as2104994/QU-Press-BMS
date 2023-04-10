@@ -60,3 +60,30 @@ book_img_input.addEventListener('change', () => {
         book_img_container.style.backgroundImage = `url(${reader.result})`;
     }
 });
+
+const newBooks = [];
+
+add_book_form.addEventListener('submit', (e) => {
+    newBooks.push({bookname: `${book_name_input.value}`, bookauthor: `${book_author_input.value}`, bookbriefing: `${book_briefing_input.value}`, bookcatagory: `${book_catagory_input.value}`, bookkeywords: `${book_keywords_input.value}`, bookpisbn: `${book_pisbn_input.value}`, bookeisbn: `${book_eisbn_input.value}`, bookimg: `${book_img_input.files[0].name}`});
+    alert('Book added successfully');
+});
+
+function downloadModifiedCSV() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'data.csv');
+    xhr.onload = () => {
+        const csvData = xhr.responseText;
+        const parsedData = Papa.parse(csvData, { header: true });
+        
+        newBooks.forEach(book => {parsedData.data.push(book)});
+
+        const modifiedCsv = Papa.unparse(parsedData.data);
+        const blob = new Blob([modifiedCsv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'data.csv';
+        downloadLink.click();
+    };
+    xhr.send();
+}

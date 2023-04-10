@@ -192,14 +192,12 @@ main {
     grid-column: 1/2;
     grid-row: 1/2;
     /* outline: 1px solid blue; */
-    /* background-image: url('assets/book1.jpg'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
     color: rgb(255,255,255);
     background-color: hsl(0, 0%, 95%);
     border-radius: 0.5rem;
-    /* width: 10rem; */
 }
 
 .book-title-authors-keywords-container {
