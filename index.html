@@ -31,15 +31,24 @@
             <div class="container">
                 <h1 class="section-title add-book-section-title">Add a book to the BMS</h1>
 
-                <form action="#" class="add-book-form-container">
-                    <label for="book-img">Upload book image</label><input type="file" id="book-img" name="book-img" accept="image/png, image/jpeg">
+                <form action="#" class="add-book-form-container" id="add-book-form">
+                    
                     <label for="book-name">Book name</label><input type="text" name="book-name" id="book-name">
-                    <label for="book-keywords">Keywords</label><input type="text" name="book-keywords" id="book-keywords">
-                    <label for="book-briefing">Book briefing</label><input type="text" name="book-briefing" id="book-briefing">
+
                     <label for="book-author">Book author</label><input type="text" name="book-author" id="book-author">
-                    <label for="book-pisbn">Book PISBN</label><input type="text" name="book-pisbn" id="book-pisbn">
-                    <label for="book-eisbn">Book EISBN</label><input type="text" name="book-eisbn" id="book-eisbn">
+
+                    <label for="book-briefing-input">Book briefing</label><input type="text" name="book-briefing-input" id="book-briefing-input">
+
                     <label for="book-catagory">Book catagory</label><input type="text" name="book-catagory" id="book-catagory">
+
+                    <label for="book-keywords">Book keywords</label><input type="text" name="book-keywords" id="book-keywords">
+                    
+                    <label for="book-pisbn">Book PISBN</label><input type="text" name="book-pisbn" id="book-pisbn" maxlength="13">
+
+                    <label for="book-eisbn">Book EISBN</label><input type="text" name="book-eisbn" id="book-eisbn" maxlength="13">
+                    
+                    <label for="book-img">Upload book image</label><input type="file" id="book-img" name="book-img" accept="image/png, image/jpeg">
+
                     <button type="submit">Add</button>
                 </form>
 
@@ -51,21 +60,21 @@
                             <ul class="book-keywords-container" role="list">
                             </ul>
                             <p class="book-name"></p>
-                            <p class="book-authors"></p>
+                            <p class="book-author"></p>
                         </div>
-                        <div class="book-briefing-container"><p></p></div>
+                        <div class="book-briefing-container"><p class="book-briefing-text"></p></div>
                         <div class="book-ISBN-container">
                             <ul>
-                                <li class="pisbn">
-                                    <p></p>
+                                <li>
+                                    <p class="book-pisbn"></p>
                                 </li>
-                                <li class="separator"><p></p></li>
-                                <li class="eisbn">
-                                    <p></p>
+                                <li><p class="isbn-separator">-</p></li>
+                                <li>
+                                    <p class="book-eisbn"></p>
                                 </li>
                             </ul>
                         </div>
-                        <div class="book-catagory-container"></div>
+                        <div class="book-catagory-container"><a href="" class="book-catagory"></a></div>
                     </div>
                     <!-- <div class="card">
                         <div class="book-cover-img-container"></div>
@@ -113,5 +122,6 @@
             </div>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

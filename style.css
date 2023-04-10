@@ -177,7 +177,7 @@ main {
 .preview-container .card {
     /* outline: 1px solid hotpink; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 0.7fr;
     grid-template-rows: 1fr 3fr 2rem;
     gap: 1rem;
     width: 30rem;
@@ -192,7 +192,7 @@ main {
     grid-column: 1/2;
     grid-row: 1/2;
     /* outline: 1px solid blue; */
-    background-image: url('assets/book1.jpg');
+    /* background-image: url('assets/book1.jpg'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
