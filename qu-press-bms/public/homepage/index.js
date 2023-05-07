@@ -22,34 +22,54 @@ const isbn_separator = document.querySelector('.isbn-separator');
 const book_eisbn = document.querySelector('.book-eisbn');
 const book_catagory = document.querySelector('.book-catagory');
 
+const bookState = {
+    "Book Title": '',
+    "Author / Translator": '',
+    "Abstract about Book": '',
+    "Catagory": '',
+    "Keywords": '',
+    "pISBN": '',
+    "eISBN": '',
+    "Book Cover": ''
+};
+
 // Listen to user input and display it inside the card dynamically
 book_name_input.addEventListener('input', () => {
     book_name.textContent = book_name_input.value;
+    bookState["Book Title"] = book_name_input.value;
 });
 
 book_author_input.addEventListener('input', () => {
     book_author.textContent = book_author_input.value;
+    bookState["Author / Translator"] = book_author_input.value;
 });
 
 book_briefing_input.addEventListener('input', () => {
     book_briefing_text.textContent = book_briefing_input.value;
+    bookState["Abstract about Book"] = book_briefing_input.value;
 });
 
 book_catagory_input.addEventListener('input', () => {
     book_catagory.textContent = book_catagory_input.value;
+    bookState["Catagory"] = book_catagory_input.value;
 });
 
 book_keywords_input.addEventListener('input', () => {
-    const keywordsArray = book_keywords_input.value.split(',').map(keyword => `<li><a href="#">${keyword.trim()}</a></li>`);
-    book_keywords_container.innerHTML = keywordsArray.join('');
+    const keywordsArray = book_keywords_input.value.split(',');
+    const keywordsHTML = keywordsArray.map(keyword => `<li><a href="#">${keyword.trim()}</a></li>`);
+    book_keywords_container.innerHTML = keywordsHTML.join('');
+
+    bookState["Keywords"] = keywordsArray.map(keyword => keyword.trim());
 });
 
 book_pisbn_input.addEventListener('input', () => {
     book_pisbn.textContent = `PISBN: ${book_pisbn_input.value}`;
+    bookState["pISBN"] = book_pisbn_input.value;
 });
 
 book_eisbn_input.addEventListener('input', () => {
     book_eisbn.textContent = `EISBN: ${book_eisbn_input.value}`;
+    bookState["eISBN"] = book_eisbn_input.value;
 });
 
 book_img_input.addEventListener('change', () => {
@@ -61,30 +81,13 @@ book_img_input.addEventListener('change', () => {
     }
 });
 
-const newBooks = [];
-
-add_book_form.addEventListener('submit', (e) => {
-    newBooks.push({bookname: `${book_name_input.value}`, bookauthor: `${book_author_input.value}`, bookbriefing: `${book_briefing_input.value}`, bookcatagory: `${book_catagory_input.value}`, bookkeywords: `${book_keywords_input.value}`, bookpisbn: `${book_pisbn_input.value}`, bookeisbn: `${book_eisbn_input.value}`, bookimg: `${book_img_input.files[0].name}`});
-    add_book_form.reset();
-    alert('Book added successfully');
+add_book_form.addEventListener('submit', async () => {
+    await fetch('/api/books', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bookState)
+    });
 });
 
-function downloadModifiedCSV() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data.csv');
-    xhr.onload = () => {
-        const csvData = xhr.responseText;
-        const parsedData = Papa.parse(csvData, { header: true });
-        
-        newBooks.forEach(book => {parsedData.data.push(book)});
-
-        const modifiedCsv = Papa.unparse(parsedData.data);
-        const blob = new Blob([modifiedCsv], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const downloadLink = document.createElement('a');
-        downloadLink.href = url;
-        downloadLink.download = 'data.csv';
-        downloadLink.click();
-    };
-    xhr.send();
-}

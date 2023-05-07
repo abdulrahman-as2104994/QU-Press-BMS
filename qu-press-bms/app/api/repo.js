@@ -11,6 +11,14 @@ export async function getBook(id) {
     const books = await getBooks();
     const book = books.find(book => book.id == id);
     if (!book)
-        return null;
-    return book;
+        return {done: false, book: null};
+    return {done: true, book: book};
+}
+
+export async function addBook(book) {
+    const books = await getBooks();
+    book.id = books.length + 1;
+    books.push(book);
+    const response = await fs.promises.writeFile(BOOKS_FILE_PATH, JSON.stringify(books));
+    return response;
 }
