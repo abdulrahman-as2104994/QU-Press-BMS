@@ -77,6 +77,7 @@
     height: 2rem;
     padding: 0.5rem;
     background-color:hsl(0, 0%, 90%);
+    margin: 1rem;
 }
 
 .add-book-form-container button {
@@ -337,3 +338,15 @@ footer .copyright-container {
     }
 }
 
+@media screen and (max-width: 680px) {
+    .preview-container .card {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .add-book-form-container input[type="text"] {
+        width: 100%;
+    }
+}
