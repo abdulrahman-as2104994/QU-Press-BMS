@@ -15,6 +15,14 @@ export async function getBook(id) {
     return {done: true, book: book};
 }
 
+export async function getBookByISBN(isbn) {
+    const books = await getBooks();
+    const book = books.find(book => book.isbn == isbn);
+    if (!book)
+        return {done: false, book: null};
+    return {done: true, book: book};
+}
+
 export async function addBook(book) {
     const books = await getBooks();
     book.id = books.length + 1;

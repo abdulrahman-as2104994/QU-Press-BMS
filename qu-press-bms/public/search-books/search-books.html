@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common-styles/common-style.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +15,89 @@
     <header class="primary-header">
         <div class="container">
             <div class="primary-header-logo-container">
-                <a href="#"><img class="primary-header-logo" src="assets/QU press Logo.jpg" alt="QU Press logo"></a>
+                <a href="#"><img class="primary-header-logo" src="../assets/QU press Logo.jpg" alt="QU Press logo"></a>
             </div>
             <nav class="primary-navigation">
                 <ul role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="search-books.html">Search books</a></li>
+                    <li><a href="../homepage/index.html">Add Books</a></li>
+                    <li><a href="search-books.html">Search Books</a></li>
                     <li><a target="_blank" href="https://www.qu.edu.qa/qupress">QU Press Homepage</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="container">
+            <div class="search-section">
+                <div class="container">
+                    <h1 class="search-section-title">Search Books</h1>
+                    <div class="search-section-form-container">
+                        <form class="search-section-form">
+                            <input type="text" id="search-section-form-input" name="search-section-form-input" class="search-section-form-input" placeholder="Enter pISBN or eISBN">
+                            <input type="submit" value="Search" class="search-section-form-submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="results-section">
+                <div class="container">
+                    <!-- Create a table to show the results -->
+                    <table class="results-section-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Keywords</th>
+                                <th>pISBN</th>
+                                <th>eISBN</th>
+                                <th>Abstract</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample data -->
+                            <tr>
+                                <td>Book 1</td>
+                                <td>Author 1</td>
+                                <td>Science</td>
+                                <td>Atoms</td>
+                                <td>12345</td>
+                                <td>123546567</td>
+                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh</td>
+                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Book book book 1</td>
+                                <td>Author AuthorAuthorAuthor1</td>
+                                <td>Science</td>
+                                <td>Atoms</td>
+                                <td>12345</td>
+                                <td>123546567</td>
+                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh
+                                    ahfoesbfuiwgfhwfhesfsefhuesifgesuif
+                                    ahfoesbfuiwgfhwfhesfsefhuesifgesuifahfoesbfuiwgfhwfhesfsefhuesifgesuif  
+                                </td>
+                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Book 1</td>
+                                <td>Author 1</td>
+                                <td>Science</td>
+                                <td>Atoms</td>
+                                <td>12345</td>
+                                <td>123546567</td>
+                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh</td>
+                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
     <footer>
         <div class="container">
             <nav class="footer-navigation">
@@ -35,9 +107,10 @@
                 </ul>
             </nav>
             <div class="copyright-container">
-                <p>Copyright &copy; 2023</p>
+                <p>Copyright QU Press &copy; 2023</p>
             </div>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
