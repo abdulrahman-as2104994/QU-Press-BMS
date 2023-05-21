@@ -33,7 +33,15 @@
                     <h1 class="search-section-title">Search Books</h1>
                     <div class="search-section-form-container">
                         <form class="search-section-form">
-                            <input type="text" id="search-section-form-input" name="search-section-form-input" class="search-section-form-input" placeholder="Enter pISBN or eISBN">
+                            <label for="search-method" class="search-method-label">Search by:</label>
+                            <select id="search-method" class="search-method">
+                                <option value="any">Any</option>
+                                <option value="id">ID</option>
+                                <option value="isbn">ISBN</option>
+                                <option value="title">Title</option>
+                            </select>
+                    
+                            <input type="text" id="search-section-form-input" name="search-section-form-input" class="search-section-form-input" placeholder="Enter book id or pISBN or eISBN or title">
                             <input type="submit" value="Search" class="search-section-form-submit">
                         </form>
                     </div>
