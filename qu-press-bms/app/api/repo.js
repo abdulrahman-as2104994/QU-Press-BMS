@@ -9,7 +9,7 @@ export async function getBooks() {
 
 export async function getBook(id) {
     const books = await getBooks();
-    const book = books.find(book => book.id == id.trim());
+    const book = books.filter(book => book.id == id.trim());
     if (!book)
         return {done: false, book: null};
     return {done: true, book: book};
@@ -18,7 +18,7 @@ export async function getBook(id) {
 export async function getBookByISBN(isbn) {
     const books = await getBooks();
     // .replace(/-/g, '').trim() to remove all dashes and spaces
-    const book = books.find(book => book["pISBN"].replace(/-/g, '').trim() == isbn.replace(/-/g, '').trim() || book["eISBN"].replace(/-/g, '').trim() == isbn.replace(/-/g, '').trim());
+    const book = books.filter(book => book["pISBN"].replace(/-/g, '').trim() == isbn.replace(/-/g, '').trim() || book["eISBN"].replace(/-/g, '').trim() == isbn.replace(/-/g, '').trim());
     if (!book)
         return {done: false, book: null};
     return {done: true, book: book};
@@ -48,7 +48,7 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
 
 const MAX_EDIT_DISTANCE = 3;
 
-export async function getBookByTitleFuzzy(title) {
+export async function getBookByExactTitle(title) {
     const books = await getBooks();
     const book = books.filter(book => {
         const bookTitle = book["Book Title"].trim().toLowerCase();
@@ -64,9 +64,25 @@ export async function getBookByTitleFuzzy(title) {
 }
 
 
-export async function getBookByTitle(title) {
+export async function getBookByTitleIncludes(title) {
     const books = await getBooks();
     const book = books.filter(book => book["Book Title"].trim().toLowerCase().includes(title.trim().toLowerCase()));
+    if (!book)
+        return {done: false, book: null};
+    return {done: true, book: book};
+}
+
+export async function getBookByAuthor(author) {
+    const books = await getBooks();
+    const book = books.filter(book => book["Author / Translator"].trim().toLowerCase().includes(author.trim().toLowerCase()));
+    if (!book)
+        return {done: false, book: null};
+    return {done: true, book: book};
+}
+
+export async function getBookByCategory(category) {
+    const books = await getBooks();
+    const book = books.filter(book => book["Category"].trim().toLowerCase().includes(category.trim().toLowerCase()));
     if (!book)
         return {done: false, book: null};
     return {done: true, book: book};

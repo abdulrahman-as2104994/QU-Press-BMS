@@ -38,67 +38,27 @@
                                 <option value="any">Any</option>
                                 <option value="id">ID</option>
                                 <option value="isbn">ISBN</option>
-                                <option value="title">Title</option>
+                                <option value="title">Exact title</option>
+                                <option value="includes">Title includes</option>
+                                <option value="author">Author</option>
+                                <option value="category">Category</option>
                             </select>
                     
-                            <input type="text" id="search-section-form-input" name="search-section-form-input" class="search-section-form-input" placeholder="Enter book id or pISBN or eISBN or title">
+                            <input type="text" id="search-section-form-input" name="search-section-form-input" class="search-section-form-input" placeholder="ID / ISBN / Title / Title includes / Author / Category">
                             <input type="submit" value="Search" class="search-section-form-submit">
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="error-section">
+                <div class="container">
+                    <p class="error-section-text"></p>
                 </div>
             </div>
             <div class="results-section">
                 <div class="container">
                     <!-- Create a table to show the results -->
                     <table class="results-section-table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Category</th>
-                                <th>Keywords</th>
-                                <th>pISBN</th>
-                                <th>eISBN</th>
-                                <th>Abstract</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Sample data -->
-                            <tr>
-                                <td>Book 1</td>
-                                <td>Author 1</td>
-                                <td>Science</td>
-                                <td>Atoms</td>
-                                <td>12345</td>
-                                <td>123546567</td>
-                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh</td>
-                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>Book book book 1</td>
-                                <td>Author AuthorAuthorAuthor1</td>
-                                <td>Science</td>
-                                <td>Atoms</td>
-                                <td>12345</td>
-                                <td>123546567</td>
-                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh
-                                    ahfoesbfuiwgfhwfhesfsefhuesifgesuif
-                                    ahfoesbfuiwgfhwfhesfsefhuesifgesuifahfoesbfuiwgfhwfhesfsefhuesifgesuif  
-                                </td>
-                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>Book 1</td>
-                                <td>Author 1</td>
-                                <td>Science</td>
-                                <td>Atoms</td>
-                                <td>12345</td>
-                                <td>123546567</td>
-                                <td>hksjfhaslkhfu   ahfoesbfuiwgfhwfhesfsefhuesifgesuif fesuifhfh</td>
-                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
